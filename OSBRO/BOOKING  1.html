@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osbro Hospital - Book Appointment</title>
+  <style>
+    /* ===== GENERAL STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, rgba(0, 74, 173, 0.9), rgba(0, 123, 255, 0.9)),
+        url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #e3e3e3;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.15);
+      text-align: center;
+      padding: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* ===== FORM CARD ===== */
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: slideUp 1s ease forwards;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 15px;
+    }
+
+    .form-container p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #004aad;
+      box-shadow: 0 0 5px rgba(0, 74, 173, 0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #004aad;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.4s ease, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #0066cc;
+      transform: scale(1.05);
+    }
+
+    .success {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #d4edda;
+      color: #155724;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      .form-container { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Osbro Hospital</h1>
+    <p>Providing Quality Healthcare in Polokwane, Limpopo</p>
+  </header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <a href="HOMEPAGE .html">🏠 Home</a>
+    <a href="SERVICE.html">Services</a>
+    <a href="ADMIN.html">Dashboard</a>
+    <a href="HEALTH TIP.html">Blog</a>
+    <a href="CONTACT US 1.html">Contact</a>
+  </nav>
+
+  <!-- ===== APPOINTMENT FORM ===== -->
+  <section>
+    <div class="form-container">
+      <h2>Book an Appointment</h2>
+      <p>Fill in your details below, and our team will contact you soon.</p>
+
+      <form id="appointmentForm">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" required>
+
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor" required>
+          <option value="">-- Choose Doctor --</option>
+          <option value="Dr. Smith">Dr. Smith</option>
+          <option value="Dr. Mokoena">Dr. Mokoena</option>
+          <option value="Dr. Patel">Dr. Patel</option>
+        </select>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" required>
+
+        <label for="message">Reason for Visit:</label>
+        <textarea id="message" rows="3"></textarea>
+
+        <button type="submit">Submit Appointment</button>
+
+        <div id="successMessage" class="success">
+          ✅ Appointment submitted successfully! We’ll contact you soon.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; 2025 Osbro Hospital | All Rights Reserved
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    const form = document.getElementById('appointmentForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const appointment = {
+        fullname: document.getElementById('fullname').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        doctor: document.getElementById('doctor').value,
+        date: document.getElementById('date').value,
+        message: document.getElementById('message').value
+      };
+
+      let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+      appointments.push(appointment);
+      localStorage.setItem('appointments', JSON.stringify(appointments));
+
+      successMessage.style.display = 'block';
+      form.reset();
+
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

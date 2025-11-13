@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osbro Hospital - Our Services</title>
+  <style>
+    /* ================== GENERAL STYLES ================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e6f0ff, #f9fbff);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 40px 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #e6e6e6;
+    }
+
+    nav {
+      background: #007bff;
+      text-align: center;
+      padding: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* ================== SERVICE SECTION ================== */
+    section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2.section-title {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card h3 {
+      color: #004aad;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .service-card p {
+      color: #444;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .service-card.active p {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .toggle-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card.active .toggle-icon {
+      transform: rotate(45deg);
+      color: #007bff;
+    }
+
+    footer {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ========== RESPONSIVE DESIGN ========== */
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8rem; }
+      nav a { display: block; margin: 10px 0; }
+      .service-card { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header>
+    <h1>Osbro Hospital</h1>
+    <p>Medical Center in Polokwane, Limpopo</p>
+  </header>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav>
+    <a href="HOMEPAGE .html">🏠 Home</a>
+    <a href="BOOKING  1.html">Book Appointment</a>
+    <a href="ADMIN.html">Dashboard</a>
+    <a href="HEALTH TIP.html">Blog</a>
+    <a href="CONTACT US 1.html">Contact</a>
+  </nav>
+
+  <!-- ====== SERVICES SECTION ====== -->
+  <section>
+    <h2 class="section-title">Our Services</h2>
+
+    <!-- General Medicine -->
+    <div class="service-card">
+      <h3>General Medicine and Surgery <span class="toggle-icon">+</span></h3>
+      <p>Our general medicine department offers diagnosis, treatment, and preventive care for adults and children. Our surgery team provides modern surgical procedures using advanced medical equipment and sterile operating environments.</p>
+    </div>
+
+    <!-- Pediatrics -->
+    <div class="service-card">
+      <h3>Pediatrics and Obstetrics <span class="toggle-icon">+</span></h3>
+      <p>We provide complete care for mothers, infants, and children. Our pediatricians specialize in vaccinations, child wellness, and early disease detection, while our obstetric team ensures safe deliveries and prenatal care.</p>
+    </div>
+
+    <!-- Emergency -->
+    <div class="service-card">
+      <h3>Emergency and Outpatient Care <span class="toggle-icon">+</span></h3>
+      <p>Our 24-hour emergency department is equipped to handle critical cases efficiently. Outpatient services include consultations, minor procedures, and routine checkups, ensuring quality care with minimal waiting times.</p>
+    </div>
+
+    <!-- Pharmacy -->
+    <div class="service-card">
+      <h3>Pharmacy and Laboratory Services <span class="toggle-icon">+</span></h3>
+      <p>Osbro Pharmacies dispense chronic and acute prescription medicine, over-the-counter products, and wound care items. Laboratory services provide accurate tests and diagnostic results to support doctors in treatment planning.</p>
+    </div>
+
+    <!-- Radiology -->
+    <div class="service-card">
+      <h3>Radiology and Imaging <span class="toggle-icon">+</span></h3>
+      <p>Our radiology department uses advanced imaging technology such as X-rays, CT scans, and ultrasounds to assist in accurate diagnosis and monitoring of various health conditions.</p>
+    </div>
+
+    <!-- Find a Pharmacy -->
+    <div class="service-card">
+      <h3>Find a Pharmacy <span class="toggle-icon">+</span></h3>
+      <p>
+        <strong>Osbro Pharmacies:</strong> Chronic & acute medicine dispensing, OTC medications, wound care products, and clinical pharmacy services.<br><br>
+        <strong>Pharmacist Expertise:</strong> Safe medicine use, antibiotic management, and interaction analysis.<br><br>
+        <strong>Focus:</strong> Optimizing treatment, reducing risks, and minimizing waste.<br><br>
+        <strong>Clicks Pharmacy Network:</strong> 36 locations at Medicross centers and 44 at Netcare pharmacies offering vitamins, supplements, and first aid products.
+      </p>
+    </div>
+
+    <!-- Family Connect -->
+    <div class="service-card">
+      <h3>Family Connect Line <span class="toggle-icon">+</span></h3>
+      <p>Our Family Connect Line helps you stay informed about your loved ones admitted to Osbro Hospital. With visitor restrictions in place, families can receive updates and support from hospital representatives or social workers.</p>
+    </div>
+
+    <!-- NICD -->
+    <div class="service-card">
+      <h3>NICD Information on Novel Coronavirus <span class="toggle-icon">+</span></h3>
+      <p>For information on COVID-19, contact the National Institute for Communicable Diseases (NICD) at <strong>0800 029 999</strong>, available Monday to Friday, 08:00 – 16:00. Stay informed and stay safe.</p>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    &copy; 2025 Osbro Hospital | All Rights Reserved
+  </footer>
+
+  <!-- ====== JAVASCRIPT INTERACTIVITY ====== -->
+  <script>
+    const cards = document.querySelectorAll(".service-card");
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        card.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
