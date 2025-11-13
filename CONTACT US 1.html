@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osbro Hospital - Polokwane Medical Center</title>
+  <style>
+    /* ---------- RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: #333;
+      background: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    /* ---------- LOADER ---------- */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.6s ease;
+    }
+
+    .spinner {
+      width: 80px;
+      height: 80px;
+      border: 8px solid #e0e0e0;
+      border-top: 8px solid #004aad;
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: rgba(0, 74, 173, 0.9);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      backdrop-filter: blur(3px);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* ---------- NAVIGATION ---------- */
+    nav {
+      background-color: #0066cc;
+      text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      transform: scale(1.05);
+    }
+
+    /* ---------- SECTION ---------- */
+    section {
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #004aad;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    iframe {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 100%;
+      height: 400px;
+      margin-top: 15px;
+    }
+
+    /* ---------- FLOATING BUTTON ---------- */
+    .floating-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #004aad;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, background-color 0.3s;
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+
+    .floating-btn:hover {
+      background-color: #0066cc;
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,74,173,0.6); }
+      70% { box-shadow: 0 0 0 20px rgba(0,74,173,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,74,173,0); }
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: rgba(0, 74, 173, 0.95);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      section {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ---------- LOADING SCREEN ---------- -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- ---------- HEADER ---------- -->
+  <header>
+    <h1>Osbro Hospital</h1>
+    <p>Top-Tier Private Medical Center | Polokwane, Limpopo</p>
+  </header>
+
+  <!-- ---------- NAVIGATION ---------- -->
+  <nav>
+    <a href="HOMEPAGE .html">🏠 Home</a>
+    <a href="SERVICE.html">Services</a>
+    <a href="BOOKING  1.html">Book Appointment</a>
+    <a href="HEALTH TIP.html">Health Blog</a>
+    <a href="CONTACT US 1.html">Contact</a>
+  </nav>
+
+  <!-- ---------- ABOUT SECTION ---------- -->
+  <section id="about">
+    
+    </p>
+    <p>
+      Our dedicated team of healthcare professionals combines medical expertise with compassion to deliver world-class treatment in a comfortable environment.
+      Whether it’s emergency care, surgery, or wellness checkups, Osbro Hospital is committed to your health and recovery.
+    </p>
+    <p><strong>At Osbro Hospital — your well-being is our commitment.</strong></p>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3647.4857510089537!2d29.458145075340877!3d-23.907847478563273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sSuite%201%2C%2037A%20Grobler%20Street%2C%20Medical%20Chambers%2C%20Polokwane%2006994!5e0!3m2!1sen!2sza!4v1761768478370!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- ---------- FOOTER ---------- -->
+  <footer>
+    <p>&copy; 2025 Osbro Hospital | All Rights Reserved | Designed with ❤️ in Polokwane</p>
+  </footer>
+
+  <!-- ---------- FLOATING BUTTON ---------- -->
+  <a href="BOOKING  1.html" class="floating-btn">📅 Book Appointment</a>
+
+  <!-- ---------- JAVASCRIPT ---------- -->
+  <script>
+    // LOADER FADE OUT
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      loader.style.opacity = "0";
+      setTimeout(() => loader.style.display = "none", 600);
+    });
+
+    // SECTION SCROLL ANIMATION
+    const sections = document.querySelectorAll("section");
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
